@@ -1,30 +1,28 @@
 package aniketsr.unixtools.wc;
 
+import aniketsr.FileSystem.MyFile;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
 public class WordCount {
-    public static void main(String[] fileNames) {
-        WCOperations operation = new WCOperations();
-        File file = null;
-        String fileData = null;
-        try {
-            file = new File(fileNames[0]);
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String sCurrentLine;
-            while ((sCurrentLine = br.readLine()) != null) {
-                fileData +="\r\n" + sCurrentLine;
-            }
-        } catch (Exception e) {
-            System.out.println("Something went wrong\n" + e);
-        }
+    WCOperations wc;
 
-        int lines,words,chars;
-        lines = operation.countLines(fileData);
-        words = operation.countWords(fileData);
-        chars = operation.countChars(fileData);
+    public WordCount(String fileName) {
+        MyFile file = new MyFile();
+        String text = file.readFile(fileName);
+        this.wc = new WCOperations(text);
+    }
 
-        System.out.println(lines + "\t" + words + "\t" + chars + " " + file.getName());
+    public WCOperations getWc() {
+        return wc;
+    }
+
+    public static void main(String[] args) {
+        WordCount cli = new WordCount(args[0]);
+        WCOperations wc = cli.getWc();
+        File file = new File(args[0]);
+        System.out.println("\t" + wc.countLines() + "\t" + wc.countWords() + "\t" + wc.countChars() + "\t" + file.getName());
     }
 }

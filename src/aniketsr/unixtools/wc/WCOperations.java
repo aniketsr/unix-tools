@@ -1,17 +1,23 @@
 package aniketsr.unixtools.wc;
 
-class WCOperations{
-    int countLines(String text){
+public class WCOperations{
+    String text;
+
+    public WCOperations(String text) {
+        this.text = text;
+    }
+
+    public int countLines(){
         String[] res = text.split("\n");
         return res.length - 1;
     }
 
-    int countWords(String text){
+    public int countWords(){
         String[] res = text.split(" ");
-        return res.length + countLines(text);
+        return res.length + countLines();
     }
 
-    int countChars(String text){
+    public int countChars(){
         String[] res = text.split("");
         return res.length;
     }

@@ -8,27 +8,27 @@ public class WCOperationsTest {
     @Test
     public void testCountLines() throws Exception {
         String text = "Hi, whats up...\nhow are you";
-        WCOperations operations = new WCOperations();
+        WCOperations operations = new WCOperations(text);
 
-        int result = operations.countLines(text);
+        int result = operations.countLines();
         assertEquals(1,result);
     }
 
     @Test
     public void testCountWords() throws Exception {
         String text = "Hi, whats up...\nhow are you";
-        WCOperations operations = new WCOperations();
+        WCOperations operations = new WCOperations(text);
 
-        int result = operations.countWords(text);
+        int result = operations.countWords();
         assertEquals(6,result);
     }
 
     @Test
     public void testCountChars() throws Exception {
         String text = "Hi, whats up...\nhow are you";
-        WCOperations operations = new WCOperations();
+        WCOperations operations = new WCOperations(text);
 
-        int result = operations.countChars(text);
+        int result = operations.countChars();
         assertEquals(28,result);
     }
 }
