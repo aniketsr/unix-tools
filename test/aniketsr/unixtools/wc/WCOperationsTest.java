@@ -1,4 +1,4 @@
-package aniketsr.unixtools;
+package aniketsr.unixtools.wc;
 
 import org.junit.Test;
 

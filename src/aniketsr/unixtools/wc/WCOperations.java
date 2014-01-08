@@ -1,4 +1,4 @@
-package aniketsr.unixtools;
+package aniketsr.unixtools.wc;
 
 class WCOperations{
     int countLines(String text){

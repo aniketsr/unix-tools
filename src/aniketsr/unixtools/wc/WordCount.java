@@ -1,4 +1,4 @@
-package aniketsr.unixtools;
+package aniketsr.unixtools.wc;
 
 import java.io.BufferedReader;
 import java.io.File;
