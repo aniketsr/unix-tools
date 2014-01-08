@@ -21,6 +21,10 @@ public class Head {
         Head cli = new Head(args[0]);
         HeadOperations head = cli.getHead();
         File file = new File(args[0]);
-        System.out.println("\t" + head.showHeader(Integer.parseInt(args[1])) + "\t" + file.getName());
+        int count;
+        if (args.length < 2)
+            count = 10;
+        else count = Integer.parseInt(args[1]);
+        System.out.println("\t" + head.showHeader(count) + "\t" + file.getName());
     }
 }
