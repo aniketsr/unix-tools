@@ -11,7 +11,6 @@ public class HeadOperations {
     }
 
     public String showHeader(int count) {
-        System.out.println(count);
         String result = "";
         String[] content = text.split("\n");
         try {
