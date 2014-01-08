@@ -1,7 +1,13 @@
 package aniketsr.unixtools.head;
 
 public class HeadOperations {
-    public String showHeadLines(String text){
+    String text;
+
+    public HeadOperations(String text) {
+        this.text = text;
+    }
+
+    public String showHeadLines(){
         return text;
     }
 }
