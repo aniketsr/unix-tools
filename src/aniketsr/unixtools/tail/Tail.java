@@ -27,7 +27,7 @@ public class Tail {
                 count = 10;
             else count = Integer.parseInt(args[1]);
             System.out.println("\t" + head.showTail(count) + "\t" + file.getName());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Something went wrong :- " + e);
         }
     }

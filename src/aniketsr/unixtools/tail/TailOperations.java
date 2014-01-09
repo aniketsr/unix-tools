@@ -14,7 +14,7 @@ public class TailOperations {
         String result = "";
         String[] content = text.split("\n");
         try {
-            for (int i = count; i <= content.length; i++) {
+            for (int i = content.length-count; i <= content.length; i++) {
                 result = result.concat(content[i].concat("\n"));
             }
         } catch (Exception e){}
