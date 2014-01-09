@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 public class TailOperations {
     String text;
+
     public TailOperations(String text) {
         this.text = text;
     }
@@ -14,11 +15,12 @@ public class TailOperations {
         String result = "";
         String[] content = text.split("\n");
         try {
-            for (int i = content.length-count; i <= content.length; i++) {
+            for (int i = content.length - count; i <= content.length; i++) {
                 result = result.concat(content[i].concat("\n"));
             }
-        } catch (Exception e){}
+        } catch (Exception e) {
+        }
 
-        return result.substring(0,result.length()-1);
+        return result.substring(0, result.length() - 1);
     }
 }

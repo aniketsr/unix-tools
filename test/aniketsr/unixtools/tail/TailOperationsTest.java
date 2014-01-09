@@ -13,6 +13,6 @@ public class TailOperationsTest {
 
         String result = head.showTail(5);
 
-        assertEquals(expected,result);
+        assertEquals(expected, result);
     }
 }
