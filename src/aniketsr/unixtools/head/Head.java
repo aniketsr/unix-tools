@@ -26,7 +26,7 @@ public class Head {
             int count;
             if (args.length < 2)
                 count = 10;
-            else count = Integer.parseInt(args[1]);
+            else count = Math.abs(Integer.parseInt(args[1]));
             System.out.println("\t" + head.showHeader(count) + "\t" + file.getName());
         }catch (Exception e){
             System.out.println("Something went wrong :- " + e);
