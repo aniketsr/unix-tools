@@ -1,9 +1,5 @@
 package aniketsr.unixtools.tail;
 
-import com.sun.deploy.util.StringUtils;
-
-import java.util.Arrays;
-
 public class TailOperations {
     String text;
 
