@@ -1,8 +1,6 @@
 package aniketsr.FileSystem;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class MyFile {
     public String readFile(String filename) {
@@ -21,5 +19,19 @@ public class MyFile {
             return "";
         }
 
+    }
+
+    public void writeFile(String fileName,String content){
+        try {
+            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            String[] temp = content.split("\n");
+            for(String line : temp)
+                writer.println(line);
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }
