@@ -10,7 +10,7 @@ public class MyFile {
             BufferedReader br;
             br = new BufferedReader(new FileReader(filename));
             while ((line = br.readLine()) != null) {
-                line = line.concat("\n");
+                line = line.concat("\r\n");
                 resLine = resLine.concat(line);
             }
             return resLine;
