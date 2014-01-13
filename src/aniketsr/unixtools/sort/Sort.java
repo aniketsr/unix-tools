@@ -16,10 +16,8 @@ public class Sort {
     public static void main(String[] args) {
         String text = new MyFile().readFile(args[0]);
         SortOperations sort = new Sort(text).getSort();
-        String[] sortedLines;
-        sortedLines = sort.sortLines();
-        String sortedText = sort.join(sortedLines, "\n");
-        System.out.println(sortedText);
+        String sortedLines = sort.sortLines();
+        System.out.println(sortedLines);
     }
 }
 

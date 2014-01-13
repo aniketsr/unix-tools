@@ -11,16 +11,16 @@ public class SortOperations {
         for (String line : lines) {
             build.append(line).append(delimeter);
         }
-        return build.toString();
+        return build.substring(0, text.length());
     }
 
     public SortOperations(String text) {
         this.text = text;
     }
 
-    public String[] sortLines() {
+    public String sortLines() {
         String[] lines = text.split("\n");
         Collections.sort(Arrays.asList(lines));
-        return lines;
+        return join(lines,"\n");
     }
 }
