@@ -1,7 +1,6 @@
 package aniketsr.unixtools.head;
 
 import aniketsr.FileSystem.MyFile;
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.io.File;
 
@@ -19,6 +18,10 @@ public class Head {
     }
 
     public static void main(String[] args) {
+        if (args.length<1){
+            System.err.println("Atleast filename is needed");
+            System.exit(1);
+        }
         try {
             Head cli = new Head(args[0]);
             HeadOperations head = cli.getHead();

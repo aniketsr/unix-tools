@@ -18,14 +18,13 @@ public class Sort {
             String text = new MyFile().readFile(args[0]);
             SortOperations sort = new Sort(text).getSort();
             String sortedLines;
-            if (args.length > 1 && (args[1]).equals("-r")){
+            if (args.length > 1 && (args[1]).equals("-r")) {
                 sortedLines = sort.reverseSort();
-            }
-            else{
+            } else {
                 sortedLines = sort.sortLines();
             }
             System.out.println(sortedLines);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Something went wrong " + e);
         }
 

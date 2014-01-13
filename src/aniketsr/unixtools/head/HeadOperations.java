@@ -1,9 +1,5 @@
 package aniketsr.unixtools.head;
 
-import com.sun.deploy.util.StringUtils;
-
-import java.util.Arrays;
-
 public class HeadOperations {
     String text;
     public HeadOperations(String text) {
