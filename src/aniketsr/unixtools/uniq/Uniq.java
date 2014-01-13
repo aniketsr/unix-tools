@@ -18,6 +18,10 @@ public class Uniq {
     }
 
     public static void main(String[] args) {
+        if(args.length<1){
+            System.err.println("Atleast filename is neede");
+            System.exit(1);
+        }
         try {
             Uniq cli = new Uniq(args[0]);
             UniqOperations uniq = cli.getTail();

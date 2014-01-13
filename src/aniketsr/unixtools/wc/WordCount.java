@@ -20,6 +20,7 @@ public class WordCount {
     }
 
     public static void main(String[] args) {
+                
         WordCount cli = new WordCount(args[0]);
         WCOperations wc = cli.getWc();
         File file = new File(args[0]);
