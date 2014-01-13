@@ -14,11 +14,18 @@ public class Sort {
     }
 
     public static void main(String[] args) {
-        String text = new MyFile().readFile(args[0]);
-        SortOperations sort = new Sort(text).getSort();
-        String sortedLines = sort.sortLines();
-        System.out.println(sortedLines);
+        try {
+            String text = new MyFile().readFile(args[0]);
+            SortOperations sort = new Sort(text).getSort();
+            String sortedLines;
+            if (args.length > 1 && (args[1]).equals("-r"))
+                sortedLines = sort.reverseSort();
+            else
+            sortedLines = sort.sortLines();
+            System.out.println(sortedLines);
+        } catch (Exception e){
+            System.out.println("Something went wrong " + e);
+        }
+
     }
 }
-
-

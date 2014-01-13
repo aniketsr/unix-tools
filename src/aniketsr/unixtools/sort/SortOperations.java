@@ -23,4 +23,10 @@ public class SortOperations {
         Collections.sort(Arrays.asList(lines));
         return join(lines,"\n");
     }
+
+    public String reverseSort() {
+        String[] sortedLines = sortLines().split("\n");
+        Collections.reverse(Arrays.asList(sortedLines));
+        return join(sortedLines,"\n");
+    }
 }
