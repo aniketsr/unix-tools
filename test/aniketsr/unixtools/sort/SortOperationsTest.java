@@ -15,4 +15,15 @@ public class SortOperationsTest {
 
         assertEquals(expected,result);
     }
+
+    @Test
+    public void testReverseSort() throws Exception {
+        String text = "hi, hw r u?\ni am xyz\nall fine";
+        String expected = "i am xyz\nhi, hw r u?\nall fine";
+        SortOperations sort = new SortOperations(text);
+
+        String result = sort.reverseSort();
+
+        assertEquals(expected,result);
+    }
 }
