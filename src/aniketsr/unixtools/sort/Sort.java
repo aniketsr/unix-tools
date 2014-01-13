@@ -1,7 +1,26 @@
 package aniketsr.unixtools.sort;
 
-public class Sort {
-    public static void main(String[] args) {
+import aniketsr.FileSystem.MyFile;
 
+public class Sort {
+    SortOperations sort;
+
+    public Sort(String text) {
+        this.sort = new SortOperations(text);
+    }
+
+    public SortOperations getSort() {
+        return sort;
+    }
+
+    public static void main(String[] args) {
+        String text = new MyFile().readFile(args[0]);
+        SortOperations sort = new Sort(text).getSort();
+        String[] sortedLines;
+        sortedLines = sort.sortLines();
+        String sortedText = sort.join(sortedLines, "\n");
+        System.out.println(sortedText);
     }
 }
+
+
