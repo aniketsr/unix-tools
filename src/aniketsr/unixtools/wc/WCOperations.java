@@ -8,17 +8,14 @@ public class WCOperations{
     }
 
     public int countLines(){
-        String[] res = text.split("\n");
-        return res.length - 1;
+        return text.split("\\n+").length - 1;
     }
 
     public int countWords(){
-        String[] res = text.split(" ");
-        return res.length + countLines();
+        return text.split("\\w+").length - 1;
     }
 
     public int countChars(){
-        String[] res = text.split("");
-        return res.length;
+        return text.length();
     }
 }	
