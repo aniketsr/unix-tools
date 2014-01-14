@@ -21,12 +21,12 @@ public class SortOperations {
     public String sortLines() {
         String[] lines = text.split("\n");
         Collections.sort(Arrays.asList(lines));
-        return join(lines,"\n");
+        return join(lines, "\n");
     }
 
     public String reverseSort() {
         String[] sortedLines = sortLines().split("\n");
         Collections.reverse(Arrays.asList(sortedLines));
-        return join(sortedLines,"\n");
+        return join(sortedLines, "\n");
     }
 }

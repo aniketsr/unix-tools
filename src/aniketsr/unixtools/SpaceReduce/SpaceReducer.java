@@ -4,6 +4,10 @@ import aniketsr.FileSystem.MyFile;
 
 public class SpaceReducer {
     public static void main(String[] args) {
+        if (args.length < 1){
+            System.err.println("At least filename is needed");
+            System.exit(1);
+        }
         try {
             String fileName = args[0];
             SpaceReduceOperations r = new SpaceReduceOperations();

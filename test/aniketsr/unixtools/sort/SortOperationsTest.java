@@ -13,7 +13,7 @@ public class SortOperationsTest {
 
         String result = sort.sortLines();
 
-        assertEquals(expected,result);
+        assertEquals(expected, result);
     }
 
     @Test
@@ -24,6 +24,6 @@ public class SortOperationsTest {
 
         String result = sort.reverseSort();
 
-        assertEquals(expected,result);
+        assertEquals(expected, result);
     }
 }
