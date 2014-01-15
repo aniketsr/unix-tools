@@ -71,6 +71,9 @@ SpaceReducer.sh filename
 
 #How to run project on your system :
 
+*install project from :-
+` \\blrfs01\TeamShares\STEP\STEP2\java-assignment\AS `
+
 * For every session you have to run this simple command from project('AS') directory and you are done!!!
  ` declare -x UNIX_HOME=$PWD `
 
