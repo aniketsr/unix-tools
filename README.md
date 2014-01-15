@@ -68,3 +68,11 @@ Uniq.sh filename
 ```
 SpaceReducer.sh filename
 ```
+
+#How to run project on your system :
+
+* For every session you have to run this simple command and you are done!!!
+ ` declare -x UNIX_HOME=$PWD `
+
+* Then you can run any unix-tools using shell command
+ For eg. ` sh Head.sh filename.txt`
