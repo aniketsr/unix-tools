@@ -2,8 +2,6 @@ package aniketsr.unixtools.tail;
 
 import aniketsr.FileSystem.MyFile;
 
-import java.io.File;
-
 public class Tail {
     TailOperations tail;
     public Tail(String fileName) {
@@ -24,12 +22,11 @@ public class Tail {
         try {
             Tail cli = new Tail(args[0]);
             TailOperations head = cli.getTail();
-            File file = new File(args[0]);
             int count;
             if (args.length < 2)
                 count = 10;
             else count = Math.abs(Integer.parseInt(args[1]));
-            System.out.println("\t" + head.showTail(count) + "\t" + file.getName());
+            System.out.println("\t" + head.showTail(count) + "\t");
         } catch (Exception e) {
             System.out.println("Something went wrong :- " + e);
         }

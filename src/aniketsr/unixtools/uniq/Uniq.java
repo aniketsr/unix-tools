@@ -2,8 +2,6 @@ package aniketsr.unixtools.uniq;
 
 import aniketsr.FileSystem.MyFile;
 
-import java.io.File;
-
 public class Uniq {
     UniqOperations uniq;
 
@@ -19,14 +17,13 @@ public class Uniq {
 
     public static void main(String[] args) {
         if(args.length<1){
-            System.err.println("Atleast filename is neede");
+            System.err.println("Atleast filename is needed");
             System.exit(1);
         }
         try {
             Uniq cli = new Uniq(args[0]);
             UniqOperations uniq = cli.getTail();
-            File file = new File(args[0]);
-            System.out.println("\t"+uniq.giveUniqLines()+"\t"+file.getName());
+            System.out.println("\t"+uniq.giveUniqLines());
         } catch (Exception e) {
             System.out.println("Something went wrong :- " + e);
         }

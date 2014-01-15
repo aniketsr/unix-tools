@@ -15,6 +15,6 @@ public class HeadOperations {
             }
         } catch (Exception e){}
 
-        return result.substring(0,result.length()-1);
+        return result.substring(0,result.length());
     }
 }

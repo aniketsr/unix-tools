@@ -10,10 +10,10 @@ public class SpaceReducer {
         }
         try {
             String fileName = args[0];
-            SpaceReduceOperations r = new SpaceReduceOperations();
+            SpaceReduceOperations reduce = new SpaceReduceOperations();
             MyFile file = new MyFile();
             String fileData = file.readFile(fileName);
-            fileData = r.reduceSpaces(fileData);
+            fileData = reduce.reduceSpaces(fileData);
             file.writeFile(fileName, fileData);
         } catch (Exception e){
             System.out.println("Something went wrong " + e);
