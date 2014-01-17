@@ -1,0 +1,22 @@
+<project name = "unix-tools" default = "run">
+
+    <target name = "clean">
+        <delete dir = "classes"></delete>
+        <delete dir = "lib"></delete>
+    </target>
+
+    <target name = "createDir">
+        <mkdir dir = "classes"> </mkdir>
+        <mkdir dir = "lib"> </mkdir>
+    </target>
+
+    <target name = "compile" depends = "createDir">
+        <javac srcdir = "src" destdir = "classes">  </javac>
+    </target>
+
+    <target name = "run" depends = "compile">
+        <jar destfile = "lib/unix-tools.jar" basedir = "classes">    </jar>
+    </target>
+
+
+</project>
