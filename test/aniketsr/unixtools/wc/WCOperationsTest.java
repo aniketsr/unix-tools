@@ -20,7 +20,7 @@ public class WCOperationsTest {
         WCOperations operations = new WCOperations(text);
 
         int result = operations.countWords();
-        assertEquals(6,result);
+        assertEquals(5,result); // wrong asserted
     }
 
     @Test
@@ -29,6 +29,6 @@ public class WCOperationsTest {
         WCOperations operations = new WCOperations(text);
 
         int result = operations.countChars();
-        assertEquals(28,result);
+        assertEquals(27,result);
     }
 }

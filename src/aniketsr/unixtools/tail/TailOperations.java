@@ -19,7 +19,6 @@ public class TailOperations {
             }
         } catch (Exception e) {
         }
-
-        return result.substring(0, result.length());
+        return result.substring(0, result.length()-1);
     }
 }
