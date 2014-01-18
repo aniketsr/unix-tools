@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <project name="unix-tools" >
 
    <target name="cleanAll">
@@ -36,6 +35,7 @@
             <formatter type = "brief" usefile = "false"/>
         </junit>
     </target>
+   </project>
     <!--<target name="tc">-->
         <!--<java classname="org.junit.rules"></java>-->
     <!--</target>-->
@@ -58,27 +58,27 @@
     <!--<target name="createZip" depends="copyReadme">-->
         <!--<zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>-->
     <!--</target>-->
-=======
-<project name = "unix-tools" default = "run">
+<!--=======-->
+<!--<project name = "unix-tools" default = "run">-->
 
-    <target name = "clean">
-        <delete dir = "classes"></delete>
-        <delete dir = "lib"></delete>
-    </target>
+    <!--<target name = "clean">-->
+        <!--<delete dir = "classes"></delete>-->
+        <!--<delete dir = "lib"></delete>-->
+    <!--</target>-->
 
-    <target name = "createDir">
-        <mkdir dir = "classes"> </mkdir>
-        <mkdir dir = "lib"> </mkdir>
-    </target>
+    <!--<target name = "createDir">-->
+        <!--<mkdir dir = "classes"> </mkdir>-->
+        <!--<mkdir dir = "lib"> </mkdir>-->
+    <!--</target>-->
 
-    <target name = "compile" depends = "createDir">
-        <javac srcdir = "src" destdir = "classes">  </javac>
-    </target>
+    <!--<target name = "compile" depends = "createDir">-->
+        <!--<javac srcdir = "src" destdir = "classes">  </javac>-->
+    <!--</target>-->
 
-    <target name = "run" depends = "compile">
-        <jar destfile = "lib/unix-tools.jar" basedir = "classes">    </jar>
-    </target>
+    <!--<target name = "run" depends = "compile">-->
+        <!--<jar destfile = "lib/unix-tools.jar" basedir = "classes">    </jar>-->
+    <!--</target>-->
 
 
->>>>>>> 318462930b4c5948116a217d57c034e7e61e42bd
-</project>
+<!-->>>>>>> 318462930b4c5948116a217d57c034e7e61e42bd-->
+<!--</project>-->
