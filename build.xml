@@ -1,8 +1,7 @@
-<project name="unix-tools">
+<project name="unix-tools" default = "dist">
 
-    <target name="cleanAll">
+    <target name="cleanBuild">
         <delete dir="build"/>
-        <delete dir="unix-tools"/>
     </target>
 
     <target name="createBuildDir">
@@ -46,45 +45,10 @@
         <jar destfile="unix-tools/lib/unix-tools.jar" basedir="build/classes"></jar>
     </target>
 
-    <target name="copyScripts" depends="createJar">
+    <target name="dist" depends="createJar">
         <copydir src="scripts" dest="unix-tools/bin"/>
+        <copy file = "README.md" toDir = "unix-tools"/>
+        <zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>
     </target>
 
 </project>
-
-        <!--<target name="copyScripts" depends="createJar">-->
-        <!--<copy file="scripts/Head.sh" todir="unix-tools/bin"></copy>-->
-        <!--<copy file="scripts/Tail.sh" todir="unix-tools/bin"></copy>-->
-        <!--<copy file="scripts/Uniq.sh" todir="unix-tools/bin"></copy>-->
-        <!--<copy file="scripts/Sort.sh" todir="unix-tools/bin"></copy>-->
-        <!--<copy file="scripts/SpaceReducer.sh" todir="unix-tools/bin"></copy>-->
-        <!--<copy file="scripts/Cut.sh" todir="unix-tools/bin"></copy>-->
-        <!--</target>-->
-        <!--<target name="copyReadme" depends="copyScripts">-->
-        <!--<copy file="README.md" todir="unix-tools"></copy>-->
-        <!--</target>-->
-        <!--<target name="createZip" depends="copyReadme">-->
-        <!--<zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>-->
-        <!--</target>-->
-        <!--<project name = "unix-tools" default = "run">-->
-
-        <!--<target name = "clean">-->
-        <!--<delete dir = "classes"></delete>-->
-        <!--<delete dir = "lib"></delete>-->
-        <!--</target>-->
-
-        <!--<target name = "createDir">-->
-        <!--<mkdir dir = "classes"> </mkdir>-->
-        <!--<mkdir dir = "lib"> </mkdir>-->
-        <!--</target>-->
-
-        <!--<target name = "compile" depends = "createDir">-->
-        <!--<javac srcdir = "src" destdir = "classes">  </javac>-->
-        <!--</target>-->
-
-        <!--<target name = "run" depends = "compile">-->
-        <!--<jar destfile = "lib/unix-tools.jar" basedir = "classes">    </jar>-->
-        <!--</target>-->
-
-
-        <!--</project>-->
