@@ -1,9 +1,7 @@
-*.git
 *.idea
 out
 *.iml
 *.jar
-*.ear
 build
 classes
 unix-tools
