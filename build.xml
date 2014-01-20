@@ -1,84 +1,90 @@
-<project name="unix-tools" >
+<project name="unix-tools">
 
-   <target name="cleanAll">
-       <delete dir="build"></delete>
-   </target>
+    <target name="cleanAll">
+        <delete dir="build"/>
+        <delete dir="unix-tools"/>
+    </target>
 
-    <target name="createDir">
+    <target name="createBuildDir">
         <mkdir dir="build"></mkdir>
         <mkdir dir="build/classes"></mkdir>
         <mkdir dir="build/testClasses"></mkdir>
     </target>
 
-    <target name="compile">
-        <mkdir dir="classes"></mkdir>
-        <javac srcdir="src" destdir="build/classes" includeantruntime = "false"></javac>
+    <target name="compile" depends="createBuildDir">
+        <javac srcdir="src" destdir="build/classes" includeantruntime="false"></javac>
     </target>
 
-    <target name = "compileTest" depends = "compile">
-        <javac srcdir = "test" destdir= "build/testClasses"
-               classpath="externalLib/junit-4.10.jar;build/classes" includeantruntime = "false"/>
+    <target name="compileTest" depends="compile">
+        <javac srcdir="test" destdir="build/testClasses"
+               classpath="externalLib/junit-4.10.jar;build/classes" includeantruntime="false"/>
     </target>
 
     <target name="runTest" depends="compileTest">
         <junit>
             <classpath>
-                <pathelement location="build/classes" />
-                <pathelement location="build/testClasses" />
+                <pathelement location="build/classes"/>
+                <pathelement location="build/testClasses"/>
                 <pathelement location="externalLib/junit-4.10.jar"/>
             </classpath>
             <batchtest>
                 <fileset dir="build/testClasses">
-                    <include name="**/*Test*" />
+                    <include name="**/*Test*"/>
                 </fileset>
             </batchtest>
-            <formatter type = "brief" usefile = "false"/>
+            <formatter type="brief" usefile="false"/>
         </junit>
     </target>
-   </project>
-    <!--<target name="tc">-->
-        <!--<java classname="org.junit.rules"></java>-->
-    <!--</target>-->
-    <!--<target name="createJar" depends="createDir">-->
-        <!--<jar destfile="unix-tools/lib/unix-tools.jar" basedir="classes"></jar>-->
-    <!--</target>-->
 
-    <!--<target name="copyScripts" depends="createJar">-->
-        <!--<copy file="scripts/Wc.sh" todir="unix-tools/bin"></copy>-->
+    <target name="createUnixToolsDir" depends="runTest">
+        <mkdir dir="unix-tools"></mkdir>
+        <mkdir dir="unix-tools/bin"></mkdir>
+        <mkdir dir="unix-tools/lib"></mkdir>
+    </target>
+
+    <target name="createJar" depends="createUnixToolsDir">
+        <jar destfile="unix-tools/lib/unix-tools.jar" basedir="build/classes"></jar>
+    </target>
+
+    <target name="copyScripts" depends="createJar">
+        <copydir src="scripts" dest="unix-tools/bin"/>
+    </target>
+
+</project>
+
+        <!--<target name="copyScripts" depends="createJar">-->
         <!--<copy file="scripts/Head.sh" todir="unix-tools/bin"></copy>-->
         <!--<copy file="scripts/Tail.sh" todir="unix-tools/bin"></copy>-->
         <!--<copy file="scripts/Uniq.sh" todir="unix-tools/bin"></copy>-->
         <!--<copy file="scripts/Sort.sh" todir="unix-tools/bin"></copy>-->
         <!--<copy file="scripts/SpaceReducer.sh" todir="unix-tools/bin"></copy>-->
         <!--<copy file="scripts/Cut.sh" todir="unix-tools/bin"></copy>-->
-    <!--</target>-->
-    <!--<target name="copyReadme" depends="copyScripts">-->
+        <!--</target>-->
+        <!--<target name="copyReadme" depends="copyScripts">-->
         <!--<copy file="README.md" todir="unix-tools"></copy>-->
-    <!--</target>-->
-    <!--<target name="createZip" depends="copyReadme">-->
+        <!--</target>-->
+        <!--<target name="createZip" depends="copyReadme">-->
         <!--<zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>-->
-    <!--</target>-->
-<!--=======-->
-<!--<project name = "unix-tools" default = "run">-->
+        <!--</target>-->
+        <!--<project name = "unix-tools" default = "run">-->
 
-    <!--<target name = "clean">-->
+        <!--<target name = "clean">-->
         <!--<delete dir = "classes"></delete>-->
         <!--<delete dir = "lib"></delete>-->
-    <!--</target>-->
+        <!--</target>-->
 
-    <!--<target name = "createDir">-->
+        <!--<target name = "createDir">-->
         <!--<mkdir dir = "classes"> </mkdir>-->
         <!--<mkdir dir = "lib"> </mkdir>-->
-    <!--</target>-->
+        <!--</target>-->
 
-    <!--<target name = "compile" depends = "createDir">-->
+        <!--<target name = "compile" depends = "createDir">-->
         <!--<javac srcdir = "src" destdir = "classes">  </javac>-->
-    <!--</target>-->
+        <!--</target>-->
 
-    <!--<target name = "run" depends = "compile">-->
+        <!--<target name = "run" depends = "compile">-->
         <!--<jar destfile = "lib/unix-tools.jar" basedir = "classes">    </jar>-->
-    <!--</target>-->
+        <!--</target>-->
 
 
-<!-->>>>>>> 318462930b4c5948116a217d57c034e7e61e42bd-->
-<!--</project>-->
+        <!--</project>-->

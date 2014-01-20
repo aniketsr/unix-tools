@@ -3,6 +3,5 @@ out
 *.iml
 *.jar
 build
-scripts
 classes
 unix-tools
