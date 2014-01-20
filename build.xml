@@ -36,16 +36,23 @@
     </target>
 
     <target name="createUnixToolsDir" depends="runTest">
-        <mkdir dir="unix-tools"></mkdir>
-        <mkdir dir="unix-tools/bin"></mkdir>
-        <mkdir dir="unix-tools/lib"></mkdir>
+        <mkdir dir="unix-tools"/>
+        <mkdir dir="unix-tools/bin"/>
+        <mkdir dir="unix-tools/lib"/>
+        <mkdir dir="unix-tools/docs"/>
     </target>
 
     <target name="createJar" depends="createUnixToolsDir">
         <jar destfile="unix-tools/lib/unix-tools.jar" basedir="build/classes"></jar>
     </target>
 
-    <target name="dist" depends="createJar">
+    <target name = "createDocs" depends="createJar">
+        <javadoc packagenames="aniketsr.unixtools.*"
+                 sourcepath="src"
+                 destdir="unix-tools/docs"/>
+    </target>
+
+    <target name="dist" depends="createDocs">
         <copydir src="scripts" dest="unix-tools/bin"/>
         <copy file = "README.md" toDir = "unix-tools"/>
         <zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>
