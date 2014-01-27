@@ -29,12 +29,12 @@ public class Tail {
         }
         try {
             Tail cli = new Tail(args[0]);
-            TailOperations head = cli.getTail();
+            TailOperations tail = cli.getTail();
             int count;
             if (args.length < 2)
-                count = 10;
+                count = defaultLines;
             else count = Math.abs(Integer.parseInt(args[1]));
-            System.out.println("\t" + head.showTail(count) + "\t");
+            System.out.println("\t" + tail.showTail(count) + "\t");
         } catch (Exception e) {
             System.out.println("Something went wrong :- " + e);
         }
