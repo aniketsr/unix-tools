@@ -55,6 +55,7 @@
     <target name="dist" depends="createDocs">
         <copydir src="scripts" dest="unix-tools/bin"/>
         <copy file = "README.md" toDir = "unix-tools"/>
+        <copy file = "MyConfig.txt" todir="unix-tools/bin"/>
         <zip zipfile="unix-tools.zip" basedir="unix-tools"></zip>
     </target>
 

@@ -19,6 +19,14 @@ public class Tail {
             System.err.println("Atleast filename is needed");
             System.exit(1);
         }
+        int defaultLines;
+        try {
+            MyFile file = new MyFile();
+            String config = file.readFile(System.getenv("UNIX_HOME") + "/bin/MyConfig.txt");
+            defaultLines = Integer.parseInt(config.split(":")[1].trim());
+        } catch (Exception e) {
+            defaultLines = 10;
+        }
         try {
             Tail cli = new Tail(args[0]);
             TailOperations head = cli.getTail();
